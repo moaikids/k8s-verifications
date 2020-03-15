@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sada4py-ng-job
+spec:
+  completions: 1
+  parallelism: 1
+  template:
+    spec:
+      containers:
+      - name: sada4py
+        image: moaikids/sada4py:latest
+        imagePullPolicy: Always
+        command: ["flask","job","ng_run"]
+        env:
+        - name: FLASK_DEBUG
+          value: "1"
+        - name: FLASK_APP
+          value: "cli.py"
+        resources:
+          limits:
+            cpu: 0.1
+            memory: 32Mi
+          requests:
+            cpu: 0.1
+            memory: 32Mi
+      restartPolicy: OnFailure
+
+ 
+
+
