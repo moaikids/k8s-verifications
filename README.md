@@ -15,7 +15,9 @@ $ ./1_1_autoscale/2_scaleout.sh
 
 $ ./1_1_autoscale/3_scalein.sh
 
-$ ./1_1_autoscale/4_finalize.sh 
+$ ./1_1_autoscale/4_autoscale.sh
+
+$ ./1_1_autoscale/5_finalize.sh 
 
 ```
 
